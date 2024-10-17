@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer Details</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <script>
+        function namevalidation() {
+            var name = document.getElementById("customername").value;
+            if (name.length < 10) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function emailValidation() {
+            var email = document.getElementById("customeremail").value;
+            // Check if the email contains '@' symbol
+            if (email.indexOf('@') === -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function formvalidation() {
+            if (!namevalidation()) {
+                alert("Enter at least 10 characters for customer's name");
+                return false;
+            }
+
+            if (!emailValidation()) {
+                alert("Enter a valid email address with '@' symbol");
+                return false;
+            }
+
+            // If both validations pass, the form will be submitted
+            return true;
+        }
+    </script>
+</head>
+
+<body bgcolor="#DACAE5" >
+      
+    <p><b>Customer Info</b></p>
+    <form method="post" action="mailto:joannaadegbile@gmail.com" onsubmit="return formvalidation()">
+        <p>Email address:
+            <input type="email" name="customeremail" id="customeremail">
+        </p>
+        <p>Name:
+            <input type="text" name="customername" id="customername">
+        </p>
+        <p>Gender:
+            <input type="radio" name="gender" value="m">Male
+            <input type="radio" name="gender" value="f">Female
+            <input type="radio" name="gender" value="O">Other
+        </p>
+        <p>Wig Type:
+            <input type="radio" name="size" value="Curly">Curly
+            <input type="radio" name="size" value="Straight">Straight
+            <input type="radio" name="size" value="Wavy">Wavy
+        </p>
+        <p>Wig color:
+            <input type="checkbox" id="color1" name="color1" value="Black">
+            <label for="color1">Black</label>
+            <input type="checkbox" id="color2" name="color2" value="Burgundy">
+            <label for="color2">Burgundy</label>
+            <input type="checkbox" id="color3" name="color3" value="Orange">
+            <label for="color3">Orange</label>
+            <input type="checkbox" id="color3" name="color3" value="Piano">
+            <label for="color3">Piano</label>
+            <input type="checkbox" id="color3" name="color3" value="Brown">
+            <label for="color3">Brown</label>
+        
+            <p> <Label for="Wig Length">Choose the length of the wig: </label>
+                <Select name="Wig Length" id="Wig Length">
+                <option value="10 inches"> 10 inches </option>
+                <option value="12 inches">12 inches</option>
+                <option value="14 inches"> 14 inches </option>
+                <option value="16 inches">16inches</option>
+                <option value="18 inches">18inches</option>
+                </select>
+                </p>
+        
+        </p>
+        <p>Payment Method:
+            <input type="radio" name="type" value="M">Mpesa
+            <input type="radio" name="type" value="MC">Mastercard
+            <input type="radio" name="type" value="C">Cash
+            <input type="radio" name="type" value="P">Paypal
+        </p>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
